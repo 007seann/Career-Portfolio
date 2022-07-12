@@ -38,20 +38,20 @@ document.addEventListener('scroll', () => {
   home.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
-// const homeAvatar = document.querySelector('.home__avatar');
-// const homeTitle = document.querySelector('.home__title');
-// const homeDescription = document.querySelector('.home__description');
+// Show "arrow" button when scrolling down
+const arrow = document.querySelector('.arrow');
+document.addEventListener('scroll', () => {
+  if (window.scrollY > homeHeight / 2) {
+    arrow.classList.add('visible');
+  } else {
+    arrow.classList.remove('visible');
+  }
+});
 
-// document.addEventListener('scroll', () => {
-//   console.log(window.scrollY);
-//   if ((window.scrollY = 0)) {
-//     homeAvatar.classList.add('home__avatar-1');
-//   } else if ((window.scrollY = homeHeight / 2)) {
-//     homeAvatar.classList.add('home__avatar-2');
-//   } else if ((window.scrollY = homeHeight)) {
-//     homeAvatar.classList.add('home__avatar-3');
-//   }
-// });
+// Make arrow button to scroll up to Home
+arrow.addEventListener('click', () => {
+  scrollIntoView('#home');
+});
 
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);

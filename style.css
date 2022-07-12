@@ -113,7 +113,7 @@ p {
 
 #navbar.navbar--dark {
   background-color: var(--color-blue);
-  padding: 5px;
+  padding: 16px;
 }
 
 .navbar__menu {
@@ -484,6 +484,27 @@ p {
   transform: scale(1.1);
   color: var(--color-yellow);
   transition: all var(--animation-duration) ease-in;
+}
+
+/* Scroll Button */
+.arrow {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 50px;
+  height: 50px;
+  font-size: 35px;
+  color: var(--color-white);
+  background-color: var(--color-blue);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-in;
+}
+
+.arrow.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* For below 768px screen width  */
