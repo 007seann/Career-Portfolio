@@ -102,7 +102,7 @@ p {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: var(--color-pink);
+  background-color: var(--color-blue);
   align-items: center;
   color: var(--color-white);
   padding: 16px;
@@ -118,6 +118,10 @@ p {
 
 .navbar__menu {
   display: flex;
+}
+
+.navbar__menu.open {
+  display: block;
 }
 
 .navbar__menu__item {
@@ -145,15 +149,6 @@ p {
   font-size: 24px;
   color: var(--color-white);
   display: none;
-}
-
-.skillset {
-  flex-direction: column;
-}
-
-.testimonial__avatar {
-  width: 80px;
-  height: 80px;
 }
 
 /* Home */
@@ -270,6 +265,7 @@ p {
   background-color: var(--color-light-grey);
   color: var(--color-light-white);
   margin: 20px 0;
+  flex-direction: column;
 }
 
 .skillset__title {
@@ -407,7 +403,7 @@ p {
   transform: translateY(0px);
 }
 .project__description h3 {
-  color: var(--color-white);
+  color: var(--color-orange);
 }
 
 .project__description h3:after {
@@ -415,9 +411,9 @@ p {
   display: block;
   position: relative;
   left: 50%;
-  width: 25px;
+  width: 50px;
   height: 2px;
-  margin-left: -12px;
+  transform: translateX(-50%);
   margin-top: 8px;
   background-color: var(--color-dark-white);
 }
@@ -522,6 +518,7 @@ p {
   }
 
   .navbar__menu {
+    /* background-color: var(--color-blue); */
     flex-direction: column;
     text-align: center;
     width: 100%;
