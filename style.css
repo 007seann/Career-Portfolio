@@ -181,6 +181,10 @@ p {
   border-radius: var(--size-border-radius);
 }
 
+.home__contact:hover {
+  background-color: var(--color-blue);
+}
+
 /* Section common*/
 .section {
   padding: 50px;
@@ -202,7 +206,6 @@ p {
 .about__majors {
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
   margin: 80px 0;
 }
 .major__icon {
@@ -265,7 +268,6 @@ p {
   background-color: var(--color-light-grey);
   color: var(--color-light-white);
   margin: 20px 0;
-  flex-direction: column;
 }
 
 .skillset__title {
@@ -321,6 +323,7 @@ p {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
 }
 
 .category__btn.selected,
@@ -342,11 +345,12 @@ p {
   height: 24px;
   line-height: 24px;
   display: inline-block;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 4px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
+  margin-top: 4.5px;
 }
 
 .work__projects {
@@ -365,7 +369,6 @@ p {
 .project {
   position: relative;
   display: flex;
-  flex-grow: 1;
   justify-content: center;
   align-items: center;
   width: 280px;
@@ -381,6 +384,7 @@ p {
 .project__img {
   max-width: 100%;
   max-height: 100%;
+  align-self: center;
 }
 
 .project__description {
@@ -424,7 +428,7 @@ p {
 }
 
 .testimonials {
-  margin: 40px;
+  margin: 10px;
 }
 
 .testimonial {
@@ -436,7 +440,6 @@ p {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  margin: 12px;
 }
 
 .testimonial__avatar:nth-child(odd) {
@@ -466,7 +469,7 @@ p {
 }
 
 .contact__title {
-  margin: 32px;
+  margin: 32px 0;
 }
 
 .contact__title,
@@ -509,8 +512,19 @@ p {
 
 /* For below 768px screen width  */
 @media screen and (max-width: 768px) {
+  :root {
+    /* Font size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
   .navbar__toggle-btn {
     display: block;
+    top: 16px;
+    right: 16px;
+    font-size: var(--font-medium);
   }
   #navbar {
     flex-direction: column;
@@ -524,4 +538,62 @@ p {
     width: 100%;
     display: none;
   }
+}
+.about__majors {
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+
+.testimonial {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.testimonial__speech-bubble {
+  order: 1;
+  margin-top: 8px;
+}
+
+.testimonial__avatar {
+  width: 100px;
+  height: 100px;
+}
+
+.testimonial__avatar:nth-child(odd) {
+  margin: 0px;
+}
+
+.testimonial__avatar:nth-child(even) {
+  margin: 0px;
+}
+.major {
+  margin-bottom: 30px;
+}
+
+.category__btn {
+  margin: 4px 0;
+}
+
+.skillset {
+  flex-direction: column;
+}
+
+.project {
+  flex-grow: 1;
+}
+
+.section {
+  padding: 16px;
+  padding-top: 40px;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  line-height: 30px;
+  right: 16px;
+  bottom: 16px;
 }
