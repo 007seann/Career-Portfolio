@@ -53,7 +53,7 @@ arrow.addEventListener('click', () => {
   scrollIntoView('#home');
 });
 
-// Project
+// Project Filtering & Animation filtered projeects
 const workBtnContainer = document.querySelector('.work__categories');
 const projectContainer = document.querySelector('.work__projects');
 const projects = document.querySelectorAll('.project');
@@ -63,6 +63,13 @@ workBtnContainer.addEventListener('click', (event) => {
   if (filter == null) {
     return;
   }
+
+  // Remove selection from the previous item and select the new one
+  const active = document.querySelector('.category__btn.selected');
+  active.classList.remove('selected');
+  const target =
+    event.target.nodeName === 'BUTTON' ? event.target : event.target.parentNode;
+  target.classList.add('selected');
 
   projectContainer.classList.add('anim-out');
   setTimeout(() => {
@@ -77,6 +84,8 @@ workBtnContainer.addEventListener('click', (event) => {
   }, 300);
 });
 
+// Updated button status when clikcing the button
+
 //   for (let project of projects) {
 //     console.log(project);
 //   }
@@ -86,13 +95,6 @@ workBtnContainer.addEventListener('click', (event) => {
 //     project = projects[i];
 //     console.log(project);
 //   }
-
-//   if (filter == null) {
-//     return;
-//   }
-//   if (filter == 'front-end') {
-//   } else if (filter == 'back-end') {
-//   } else if (filter == 'machine-learning') console.log(link);
 
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
